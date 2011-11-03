@@ -1,10 +1,9 @@
--f ./.tags
---langmap=php:+.inc
--h '.php.inc'
 -R
+-f ./.tags
 --totals=yes
+--exclude=.svn
 --tag-relative=yes
 --PHP-kinds=+cf-v
---regex-PHP
---regex-PHP=/(^|^[^\/*]+[[:blank:]])class[[:blank:]]+([[:alpha:]_][[:alnum:]_]*)/\2/c/
---regex-PHP=/(^|^[^\/*]+[[:blank:]])function[[:blank:]]+&?[[:blank:]]*([[:alpha:]_][[:alnum:]_]*)/\2/f/
+--regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
+--regex-PHP=/interface\s+([^ ]+)/\1/c/
+--regex-PHP=/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
