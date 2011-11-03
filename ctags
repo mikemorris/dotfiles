@@ -1,4 +1,4 @@
--f ./tags
+-f ./.tags
 --langmap=php:+.inc
 -h '.php.inc'
 -R

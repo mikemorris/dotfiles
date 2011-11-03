@@ -28,7 +28,7 @@ task :default => :install
 
 desc "install the dot files into user's home directory"
 task :install do
-  replace_all = false
+  replace_all = true
   Dir['*'].each do |file|
     next if %w[Rakefile README LICENSE].include? file
     next if FileTest.symlink?(File.join(ENV['HOME'], ".#{file}"))

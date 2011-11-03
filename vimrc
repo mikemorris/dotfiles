@@ -23,7 +23,7 @@ set background=dark
 set transparency=5
 syntax on "syntax highlighting
 colorscheme jellybeans
-set guifont=Menlo:h16
+set guifont=Menlo:h15
 
 "maximize screen and enter fullscreen mode
 if has("gui_running")
@@ -86,7 +86,7 @@ noremap <Leader>v :vsp^M^W^W<cr>
 noremap <Leader>h :split^M^W^W<cr>
 
 " Exuberant CTags ******************************************************************
-set tags=/Users/mikemorris/Sites/tags
+set tags=/Users/mikemorris/Sites/.tags
 
 " Zen Coding ******************************************************************
 let g:user_zen_leader_key = '<D-e>'
