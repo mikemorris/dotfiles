@@ -20,13 +20,23 @@ set cursorline "highlight cursor line
 "colors and fonts
 "set t_Co=256 "256 colors
 set background=dark 
-set transparency=5
 syntax on "syntax highlighting
 colorscheme jellybeans
 set guifont=Menlo:h15
 
+"enable mouse reporting in iTerm
+if has('mouse')
+  set mouse=a
+  if &term =~ "xterm" || &term =~ "screen"
+    autocmd VimEnter * set ttymouse=xterm2
+    autocmd FocusGained * set ttymouse=xterm2
+    autocmd BufEnter * set ttymouse=xterm2
+  endif
+endif
+
 "maximize screen and enter fullscreen mode
 if has("gui_running")
+  set transparency=5
   set fuoptions=maxvert,maxhorz
   au GUIEnter * set fullscreen
 endif
