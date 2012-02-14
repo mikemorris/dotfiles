@@ -1,5 +1,5 @@
 # Give locally installed packages precedence over system defaults.
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/mysql/bin/:$PATH"
 
 # Add local Python install to PYTHONPATH
 export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
