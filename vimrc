@@ -109,7 +109,7 @@ map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
 " NERDTree ********************************************************************
-:noremap <Leader>n :NERDTreeToggle Sites<CR>
+:noremap <Leader>n :NERDTreeToggle Dropbox/Sites<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
 
@@ -124,3 +124,7 @@ let g:acp_behaviorSnipmateLength = 1
 
 " Command-T ********************************************************************
 map <Leader>f :CommandT<cr>
+
+" Macros ********************************************************************
+" fix quotation marks and mdashes form pasting MSWord text
+let @w = ':%s/“\|”/"/g:%s/–/\&mdash;/g'
