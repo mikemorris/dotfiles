@@ -5,10 +5,10 @@ export PATH="/usr/local/bin:/usr/local/mysql/bin/:$PATH"
 export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 
 # Fix to install Perl DBD::mysql module
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
+# export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
 
 # Load RVM into a shell session.
-[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 alias pear="php /usr/lib/php/pear/pearcmd.php" 
 alias pecl="php /usr/lib/php/pear/peclcmd.php" 
@@ -17,3 +17,5 @@ alias pecl="php /usr/lib/php/pear/peclcmd.php"
 if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
