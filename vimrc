@@ -124,3 +124,7 @@ let g:acp_behaviorSnipmateLength = 1
 
 " Command-T ********************************************************************
 map <Leader>f :CommandT<cr>
+
+" Macros ********************************************************************
+" fix quotation marks and mdashes form pasting MSWord text
+"let @w = ':%s/“\|”/"/g::%s/’/\'/g:%s/–/\&mdash;/g'
