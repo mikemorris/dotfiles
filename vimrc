@@ -96,7 +96,7 @@ noremap <Leader>v :vsp^M^W^W<cr>
 noremap <Leader>h :split^M^W^W<cr>
 
 " Exuberant CTags ******************************************************************
-set tags=/Users/mikemorris/Sites/.tags
+set tags=/Dropbox/Sites/.tags " Set symlink in root to /Users/{username}/Dropbox for this to work
 
 " Zen Coding ******************************************************************
 let g:user_zen_leader_key = '<D-e>'
@@ -109,7 +109,7 @@ map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
 " NERDTree ********************************************************************
-:noremap <Leader>n :NERDTreeToggle Sites<CR>
+:noremap <Leader>n :NERDTreeToggle Dropbox/Sites<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
 
