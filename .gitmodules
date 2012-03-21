@@ -1,6 +1,6 @@
 [submodule "vim/bundle/mustache"]
 	path = vim/bundle/mustache
 	url = git://github.com/juvenn/mustache.vim.git
-[submodule "bash/symfony.sh"]
-	path = bash/symfony.sh
+[submodule "bash/symfony"]
+	path = bash/symfony
 	url = git://gist.github.com/275690.git
