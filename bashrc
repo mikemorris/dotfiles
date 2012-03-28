@@ -10,9 +10,6 @@ export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 # Load RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-alias pear="php /usr/lib/php/pear/pearcmd.php" 
-alias pecl="php /usr/lib/php/pear/peclcmd.php" 
-
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then
   source ~/.localrc
