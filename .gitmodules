@@ -1,9 +1,6 @@
 [submodule "bash/symfony"]
 	path = bash/symfony
 	url = git://gist.github.com/275690.git
-[submodule "vim/bundle/mustache"]
-	path = vim/bundle/mustache
-	url = git://github.com/juvenn/mustache.vim.git
 [submodule "vim/bundle/vim-smartinput"]
 	path = vim/bundle/vim-smartinput
 	url = git://github.com/kana/vim-smartinput.git
@@ -19,12 +16,6 @@
 [submodule "vim/bundle/AutoComplPop"]
 	path = vim/bundle/AutoComplPop
 	url = git://github.com/vim-scripts/AutoComplPop.git
-[submodule "vim/bundle/html_autoclosetag"]
-	path = vim/bundle/html_autoclosetag
-	url = git://github.com/vim-scripts/HTML-AutoCloseTag.git
-[submodule "vim/bundle/jellybeans"]
-	path = vim/bundle/jellybeans
-	url = git://github.com/nanotech/jellybeans.vim.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
