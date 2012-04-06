@@ -17,12 +17,26 @@ set linebreak "wrap at word
 set cursorline "highlight cursor line
 "set cursorcolumn "highlight cursor column
 
+"syntax highlighting
+syntax on
+
 "colors and fonts
 "set t_Co=256 "256 colors
-set background=dark 
-syntax on "syntax highlighting
-colorscheme jellybeans
-set guifont=Menlo:h15
+
+"colorscheme functions
+function! Theme_jellybeans()
+  set background=dark 
+  colorscheme jellybeans
+  set guifont=Menlo:h15
+endfunction
+
+function! Theme_solarized()
+  set background=light 
+  colorscheme solarized
+  set guifont=Menlo:h24
+endfunction
+
+call Theme_jellybeans()
 
 "enable mouse reporting in iTerm
 if has('mouse')
@@ -45,15 +59,11 @@ endif
 filetype plugin on
 filetype indent on
 
-"set jj to escape for mode switching
-let mapleader = ","
-imap jj <Esc> 
-
 "search functionality
-set hlsearch  " highlight search
-set incsearch  " Incremental search, search as you type
-set ignorecase " Ignore case when searching 
-set smartcase " Ignore case when searching lowercase
+set hlsearch "highlight search
+set incsearch "Incremental search, search as you type
+set ignorecase "Ignore case when searching 
+set smartcase "Ignore case when searching lowercase
 
 "hide save prompt when switching away from a modified buffer
 set hidden
@@ -109,7 +119,7 @@ map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
 " NERDTree ********************************************************************
-:noremap <Leader>n :NERDTreeToggle Dropbox/Sites<CR>
+:noremap <Leader>n :NERDTreeToggle /Dropbox/Sites<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
 
@@ -127,4 +137,16 @@ map <Leader>f :CommandT<cr>
 
 " Macros ********************************************************************
 " fix quotation marks and mdashes form pasting MSWord text
-"let @w = ':%s/“\|”/"/g::%s/’/\'/g:%s/–/\&mdash;/g'
+function! Fix_MSWord()
+  if search('“\|”')
+    :%s/“\|”/"/g
+  endif
+  if search('’')
+    :%s/’/'/g
+  endif
+  if search('–')
+    :%s/–/\&mdash;/g
+  endif
+endfunction
+
+let @w = ':call Fix_MSWord()'
