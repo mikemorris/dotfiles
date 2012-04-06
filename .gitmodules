@@ -55,3 +55,12 @@
 [submodule "vim/bundle/Better-CSS-Syntax-for-Vim"]
 	path = vim/bundle/Better-CSS-Syntax-for-Vim
 	url = git://github.com/ChrisYip/Better-CSS-Syntax-for-Vim.git
+[submodule "vim/bundle/jellybeans.vim"]
+	path = vim/bundle/jellybeans.vim
+	url = git://github.com/nanotech/jellybeans.vim.git
+[submodule "vim/bundle/mustache.vim"]
+	path = vim/bundle/mustache.vim
+	url = git://github.com/juvenn/mustache.vim.git
+[submodule "vim/bundle/closetag.vim"]
+	path = vim/bundle/closetag.vim
+	url = git://github.com/docunext/closetag.vim.git
