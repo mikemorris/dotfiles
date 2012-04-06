@@ -52,3 +52,6 @@
 [submodule "vim/bundle/TaskList.vim"]
 	path = vim/bundle/TaskList.vim
 	url = git://github.com/vim-scripts/TaskList.vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
