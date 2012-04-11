@@ -21,7 +21,7 @@ set cursorline "highlight cursor line
 syntax on
 
 "colors and fonts
-"set t_Co=256 "256 colors
+set t_Co=256 "256 colors
 
 "colorscheme functions
 function! Theme_jellybeans()
@@ -50,7 +50,7 @@ endif
 
 "maximize screen and enter fullscreen mode
 if has("gui_running")
-  set transparency=5
+  set transparency=4
   set fuoptions=maxvert,maxhorz
   au GUIEnter * set fullscreen
 endif
