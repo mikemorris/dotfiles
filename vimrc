@@ -109,7 +109,7 @@ noremap <Leader>h :split^M^W^W<cr>
 set tags=/Dropbox/Sites/.tags " Set symlink in root to /Users/{username}/Dropbox for this to work
 
 " Zen Coding ******************************************************************
-let g:user_zen_leader_key = '<D-e>'
+let g:user_zen_leader_key = '<C-z>'
 
 " Set Less *******************************************************************
 au BufRead *.less set syntax=css
