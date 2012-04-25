@@ -11,9 +11,6 @@ export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-# Alias git to hub for https://github.com/defunkt/hub
-alias git="hub"
-
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then
   source ~/.localrc
