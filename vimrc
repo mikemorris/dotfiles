@@ -33,7 +33,7 @@ endfunction
 function! Theme_solarized()
   set background=light 
   colorscheme solarized
-  set guifont=Menlo:h24
+  set guifont=Menlo:h15
 endfunction
 
 call Theme_jellybeans()
@@ -67,6 +67,9 @@ set smartcase "Ignore case when searching lowercase
 
 "hide save prompt when switching away from a modified buffer
 set hidden
+
+"enable paste mode
+imap <D-v> ^O:set paste<Enter>^R+^O:set nopaste<Enter>
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
