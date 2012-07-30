@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:/usr/loc
 export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 
 # Fix to install Perl DBD::mysql module and Ruby mysql2 gem
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
+# export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
 
 # Load RVM into a shell session.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
