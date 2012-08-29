@@ -1,8 +1,8 @@
 # Give locally installed packages precedence over system defaults.
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:/usr/local/mysql/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:$PATH"
 
 # Add local Python install to PYTHONPATH
-export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
+# export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 
 # Fix to install Perl DBD::mysql module and Ruby mysql2 gem
 # export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/mysql/lib/"
