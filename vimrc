@@ -62,6 +62,9 @@ endif
 filetype plugin on
 filetype indent on
 
+"enable matchit
+runtime macros/matchit.vim
+
 "search functionality
 set hlsearch "highlight search
 set incsearch "Incremental search, search as you type
