@@ -21,3 +21,9 @@ if [ -f ~/.localrc ]; then
 fi
 
 alias t="tmux at -t"
+
+# bash prompt config
+function parse_git_branch { 
+   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
+} 
+export PS1="\[\e[33;1m\]\t\[\e[0m\] \u:\w \[\e[31;1m\]\$(parse_git_branch)\[\e[0m\]$ "
