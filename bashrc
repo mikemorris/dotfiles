@@ -21,6 +21,10 @@ if [ -f ~/.localrc ]; then
 fi
 
 alias t="tmux at -t"
+alias gti="git"
+
+# alias git to hub
+eval "$(hub alias -s)"
 
 # bash prompt config
 function parse_git_branch { 
