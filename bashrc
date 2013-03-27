@@ -22,6 +22,7 @@ fi
 
 alias t="tmux at -t"
 alias gti="git"
+alias gi="git"
 
 # alias git to hub
 eval "$(hub alias -s)"
