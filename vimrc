@@ -110,6 +110,9 @@ set si "smartindent (local to buffer)
 set equalalways " Multiple windows, when created, are equal in size
 set splitbelow splitright
 
+" Leader
+let mapleader = ','
+
 " Vertical and horizontal split then hop to a new buffer
 noremap <Leader>v :vsp^M^W^W<cr>
 noremap <Leader>h :split^M^W^W<cr>
@@ -143,6 +146,10 @@ map <Leader>y :TagbarToggle<cr>
 
 " Command-T ********************************************************************
 map <Leader>f :CommandT<cr>
+
+" Ag
+nnoremap <leader>a :Ack 
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Macros ********************************************************************
 " fix quotation marks and mdashes form pasting MSWord text

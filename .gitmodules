@@ -76,3 +76,6 @@
 [submodule "vim/bundle/sudo.vim"]
 	path = vim/bundle/sudo.vim
 	url = git://github.com/vim-scripts/sudo.vim.git
+[submodule "vim/bundle/ack.vim"]
+	path = vim/bundle/ack.vim
+	url = git://github.com/mileszs/ack.vim.git
