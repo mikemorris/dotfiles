@@ -1,6 +1,9 @@
 # Give locally installed packages precedence over system defaults.
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:$PATH"
 
+# set mapnik-sdk path
+export PATH="$HOME/Projects/mapnik/bin:$PATH"
+
 # Add local Python install to PYTHONPATH
 # export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
 

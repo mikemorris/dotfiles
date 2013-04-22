@@ -1,5 +1,7 @@
+.agignore
 .DS_Store
 .netrwhist
+*.orig
 *.swp
 *.swo
 *.swn
