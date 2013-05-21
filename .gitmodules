@@ -70,9 +70,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
-[submodule "vim/bundle/vim-haml"]
-	path = vim/bundle/vim-haml
-	url = git@github.com:mikemorris/vim-haml.git
 [submodule "vim/bundle/sudo.vim"]
 	path = vim/bundle/sudo.vim
 	url = git://github.com/vim-scripts/sudo.vim.git
