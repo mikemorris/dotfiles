@@ -130,42 +130,12 @@ au BufRead *.less set syntax=css
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
 
-" NERDTree ********************************************************************
-:noremap <Leader>n :NERDTreeToggle /Dropbox/Sites<CR>
-let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
-let NERDTreeMouseMode=1 " Single click for everything
-
 " SUPERCOMPLETE **************************************************************
 let g:SuperTabDefaultCompletionType = "context"
-
-" TAGBAR ********************************************************************
-map <Leader>y :TagbarToggle<cr>
-
-" AutoComplPop ********************************************************************
-"let g:acp_behaviorSnipmateLength = 1
-
-" Command-T ********************************************************************
-map <Leader>f :CommandT<cr>
 
 " Ag
 nnoremap <leader>a :Ack 
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
-" Macros ********************************************************************
-" fix quotation marks and mdashes form pasting MSWord text
-function! Fix_MSWord()
-  if search('“\|”')
-    :%s/“\|”/"/g
-  endif
-  if search('’')
-    :%s/’/'/g
-  endif
-  if search('–')
-    :%s/–/\&mdash;/g
-  endif
-endfunction
-
-let @w = ':call Fix_MSWord()'
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
