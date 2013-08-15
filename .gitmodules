@@ -55,3 +55,6 @@
 [submodule "vim/bundle/neocomplcache"]
 	path = vim/bundle/neocomplcache
 	url = git@github.com:Shougo/neocomplcache.vim.git
+[submodule "vim/bundle/tern_for_vim"]
+	path = vim/bundle/tern_for_vim
+	url = git@github.com:marijnh/tern_for_vim.git
