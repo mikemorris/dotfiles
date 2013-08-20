@@ -6,3 +6,4 @@
 *.swo
 *.swn
 Gemfile.lock
+node_modules/
