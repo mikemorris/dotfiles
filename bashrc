@@ -27,6 +27,7 @@ alias t="tmux at -t"
 alias gti="git"
 alias gi="git"
 alias git-amend="git commit --amend -C HEAD"
+alias node-waf="node-gyp"
 
 # alias git to hub
 eval "$(hub alias -s)"
