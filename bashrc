@@ -23,7 +23,7 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
-alias t="tmux at -t"
+alias t="tmux -2 at -t"
 alias gti="git"
 alias gi="git"
 alias git-amend="git commit --amend -C HEAD"
