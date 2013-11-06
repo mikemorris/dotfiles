@@ -1,6 +1,9 @@
 # Give locally installed packages precedence over system defaults.
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:$PATH"
 
+# Add SSH Keys
+ssh-add $(find $HOME/.ssh/ | egrep _\(rsa\|dsa\)$)
+
 # set mapnik-sdk path
 export PATH="$HOME/Projects/mapnik/bin:$PATH"
 
@@ -15,8 +18,7 @@ export PATH="$HOME/Projects/mapnik/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Load NVM into a shell session.
-[[ -r "$HOME/.nvm/bash_completion" ]] && . "$HOME/.nvm/bash_completion"
-source ~/.nvm/nvm.sh
+[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # use .localrc for settings specific to one system
 if [ -f ~/.localrc ]; then
@@ -27,7 +29,6 @@ alias t="tmux -2 at -t"
 alias gti="git"
 alias gi="git"
 alias git-amend="git commit --amend -C HEAD"
-alias node-waf="node-gyp"
 
 # alias git to hub
 eval "$(hub alias -s)"
