@@ -2,7 +2,7 @@
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:$PATH"
 
 # Add SSH Keys
-ssh-add $(find $HOME/.ssh/ | egrep _\(rsa\|dsa\)$)
+ssh-add $(find $HOME/.ssh/ | egrep _\(rsa\|dsa\)$) &> /dev/null
 
 # set mapnik-sdk path
 export PATH="$HOME/Projects/mapnik/bin:$PATH"
