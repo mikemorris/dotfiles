@@ -6,7 +6,7 @@ ssh-add $(find $HOME/.ssh/ | egrep _\(rsa\|dsa\)$) &> /dev/null
 
 # set mapnik-sdk path and c++ build flag
 export PATH="$HOME/Projects/mapnik/bin:$PATH"
-export CXXFLAGS="-macosx-version-min=10.9"
+export CXXFLAGS="-mmacosx-version-min=10.9"
 
 # Add local Python install to PYTHONPATH
 # export PYTHONPATH="/usr/local/lib/python:$PYTHONPATH"
