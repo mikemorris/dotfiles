@@ -126,6 +126,7 @@ let g:user_zen_leader_key = '<C-z>'
 " Set Less *******************************************************************
 au BufRead *.less set syntax=css
 au BufRead *._ set syntax=html
+au BufRead *.glsl set syntax=c
 
 " Insert New Line *************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
