@@ -1,6 +1,9 @@
 # Give locally installed packages precedence over system defaults.
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/lib/node_modules:$PATH"
 
+# Set PKG_CONFIG_PATH
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:/usr/local/lib/pkgconfig"
+
 # Add SSH Keys
 ssh-add $(find $HOME/.ssh/ | egrep _\(rsa\|dsa\)$) &> /dev/null
 
@@ -21,11 +24,6 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Load NVM into a shell session.
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
-# use .localrc for settings specific to one system
-if [ -f ~/.localrc ]; then
-  source ~/.localrc
-fi
-
 alias t="tmux -2 at -t"
 alias gti="git"
 alias gi="git"
@@ -41,4 +39,12 @@ complete -C aws_completer aws
 function parse_git_branch { 
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' 
 } 
-export PS1="\[\e[33;1m\]\t\[\e[0m\] \u:\w \[\e[31;1m\]\$(parse_git_branch)\[\e[0m\]$ "
+export PS1="\[\e[33;1m\]\t\[\e[0m\] \u:\w \[\e[31;1m\]\$(parse_git_branch)\[\e[0m\]"
+
+# added by travis gem
+[ -f /Users/mikemorris/.travis/travis.sh ] && source /Users/mikemorris/.travis/travis.sh
+
+# use .localrc for settings specific to one system
+if [ -f ~/.localrc ]; then
+  source ~/.localrc
+fi
