@@ -10,3 +10,4 @@
 Gemfile.lock
 node_modules/
 npm-debug.log
+*.xcscmblueprint
