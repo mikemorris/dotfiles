@@ -7,14 +7,9 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # Add SSH Keys
 ssh-add -A &> /dev/null
 
-# Load rbenv
-eval "$(rbenv init -)"
-
-# Load nvm
-[ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh
-
-# Load Rustup and Cargo
-PATH=$PATH:$HOME/.cargo/bin
+# Use asdf version manager
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
+[ -f $HOME/.asdf/completions/asdf.bash ] && source $HOME/.asdf/completions/asdf.bash
 
 alias t="tmux -2 at -t"
 alias gti="git"
