@@ -1,20 +1,51 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Plug 'neomake/neomake'
-Plug 'janko-m/vim-test'
+" Colorschemes
+Plug 'flazz/vim-colorschemes'
+
+" Syntax
+Plug 'hail2u/vim-css3-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'mxw/vim-jsx'
+Plug 'HerringtonDarkholme/yats.vim' " TypeScript
+Plug 'elmcast/elm-vim'
+Plug 'elixir-editors/vim-elixir'
+
+" Autocomplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'zchee/deoplete-jedi' " Python
 Plug 'tpope/vim-surround'
 
-Plug 'flazz/vim-colorschemes'
-Plug 'HerringtonDarkholme/yats.vim'
-
+" Lint
 Plug 'w0rp/ale'
-Plug 'elixir-editors/vim-elixir'
-Plug 'elmcast/elm-vim'
+Plug 'slashmili/alchemist.vim'
+" Plug 'neomake/neomake'
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'mhartington/nvim-typescript'
-Plug 'zchee/deoplete-jedi'
+" Edit
+Plug 'bling/vim-airline'
+" Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/sudo.vim'
+
+" Search
+Plug 'mileszs/ack.vim'
+
+" Test
+" Plug 'janko-m/vim-test'
+
+" git
+" Plug 'tpope/fugitive.vim'
+
+" tmux
+" Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -25,14 +56,23 @@ set tabstop=4 softtabstop=2 shiftwidth=2 expandtab smarttab
 set wrap linebreak
 set number 
 
+" Colorschemes
 set t_Co=256
 set background=dark
-
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_visibility="high"
 let g:solarized_contrast="high"
 colorscheme solarized
 
-let g:elm_format_autosave = 1
+" Syntax
+let g:javascript_plugin_jsdoc = 1
+" let g:elm_format_autosave = 1
+
+" Autocomplete
 let g:deoplete#enable_at_startup = 1
+
+" Add ag support to ack.vim
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
