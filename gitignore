@@ -1,14 +1,10 @@
 .agignore
 .DS_Store
-.netrwhist
-.nodemonignore
-.tern-port
 *.orig
 *.swp
 *.swo
 *.swn
-Gemfile.lock
-node_modules/
+node_modules
 npm-debug.log
 *.xcscmblueprint
 proxychains.conf
