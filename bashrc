@@ -10,6 +10,8 @@ ssh-add -A &> /dev/null
 # Use asdf version manager
 [ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
 [ -f $HOME/.asdf/completions/asdf.bash ] && source $HOME/.asdf/completions/asdf.bash
+export ERLANG_EXTRA_CONFIGURE_OPTIONS="--without-javac"
+export ASDF_ERLANG_OPTIONS="--no-docs"
 
 alias t="tmux -2 at -t"
 alias gti="git"
