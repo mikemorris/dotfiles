@@ -14,11 +14,11 @@ Plug 'elixir-editors/vim-elixir'
 
 " Autocomplete
 if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+  " Plug 'Shougo/deoplete.nvim'
+  " Plug 'roxma/nvim-yarp'
+  " Plug 'roxma/vim-hug-neovim-rpc'
 endif
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 " Plug 'zchee/deoplete-jedi' " Python
@@ -49,12 +49,19 @@ Plug 'mileszs/ack.vim'
 
 call plug#end()
 
+" vim-plug sets these automatically
+" filetype plugin indent on
+" syntax on
+
+" Use Mac clipboard
 set clipboard=unnamed
+
+" Enable mouse reporting
 set mouse=a
 
 set tabstop=4 softtabstop=2 shiftwidth=2 expandtab smarttab
-set wrap linebreak
-set number 
+set wrap linebreak " Wrap lines at word
+set number " Show line numbers
 
 " Colorschemes
 set t_Co=256
@@ -72,7 +79,13 @@ let g:javascript_plugin_jsdoc = 1
 " Autocomplete
 let g:deoplete#enable_at_startup = 1
 
+" Search
+
+
 " Add ag support to ack.vim
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" Window management
+set splitbelow splitright
