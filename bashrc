@@ -17,6 +17,8 @@ export ASDF_ERLANG_OPTIONS="--no-docs"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platforms-tools
 
+export EDITOR=nvim
+
 alias t="tmux -2 at -t"
 alias gti="git"
 
