@@ -8,7 +8,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' " TypeScript
-Plug 'elmcast/elm-vim'
 Plug 'elixir-editors/vim-elixir'
 
 " Lint
@@ -86,7 +85,20 @@ colorscheme solarized
 let g:javascript_plugin_jsdoc = 1
 
 " Lint
-" let g:elm_format_autosave = 1
+let g:ale_linters = {
+\  'javascript': ['flow']
+\}
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '?'
+let g:ale_statusline_format = ['X %d', '? %d', '']
+" %linter% is the name of the linter that provided the message
+" %s is the error or warning message
+let g:ale_echo_msg_format = '%linter% says %s'
+" Map keys to navigate between lines with errors and warnings.
+nnoremap <leader>an :ALENextWrap<cr>
+nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 " Autocomplete
 let g:deoplete#enable_at_startup = 1
