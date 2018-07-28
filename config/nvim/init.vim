@@ -85,6 +85,9 @@ colorscheme solarized
 " Syntax
 let g:javascript_plugin_jsdoc = 1
 
+" Fastlane syntax highlighting
+au BufNewFile,BufRead Fastfile,Appfile,Snapfile,Scanfile,Gymfile,Matchfile,Deliverfile set filetype=ruby
+
 " Lint
 " let g:elm_format_autosave = 1
 
