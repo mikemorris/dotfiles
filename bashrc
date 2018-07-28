@@ -28,6 +28,9 @@ eval "$(hub alias -s)"
 # awscli autocompletion
 complete -C aws_completer aws
 
+# kubectl autocompletion
+source <(kubectl completion bash)
+
 # bash prompt config
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
