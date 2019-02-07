@@ -88,11 +88,18 @@ let g:javascript_plugin_jsdoc = 1
 au BufNewFile,BufRead Fastfile,Appfile,Snapfile,Scanfile,Gymfile,Matchfile,Deliverfile set filetype=ruby
 
 " Lint
+let g:ale_fixers = {
+\ 'javascript': ['prettier'],
+\ 'json': ['prettier'],
+\ 'css': ['prettier'],
+\ 'Markdown': ['prettier'],
+\}
 let g:ale_linters = {
-\  'javascript': ['flow']
+\ 'javascript': ['flow'],
 \}
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+let g:ale_fix_on_save = 1
 let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '?'
 let g:ale_statusline_format = ['X %d', '? %d', '']
