@@ -7,11 +7,8 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # Add SSH Keys
 ssh-add -A &> /dev/null
 
-# Use asdf version manager
-[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
-[ -f $HOME/.asdf/completions/asdf.bash ] && source $HOME/.asdf/completions/asdf.bash
-export ERLANG_EXTRA_CONFIGURE_OPTIONS="--without-javac"
-export ASDF_ERLANG_OPTIONS="--no-docs"
+# Use Homebrew Ruby
+PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Android Studio config
 export ANDROID_HOME=$HOME/Library/Android/sdk
