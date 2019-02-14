@@ -22,6 +22,9 @@ alias gti="git"
 # alias git to hub
 eval "$(hub alias -s)"
 
+# bash autocompletion
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 # awscli autocompletion
 complete -C aws_completer aws
 
