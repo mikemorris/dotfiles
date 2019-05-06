@@ -8,7 +8,10 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 ssh-add -A &> /dev/null
 
 # Use Homebrew Ruby
-PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/usr/local/opt/ruby/bin:$PATH
+
+# Use Rust Cargo crates
+export PATH=$HOME/.cargo/bin:$PATH
 
 # Android Studio config
 export ANDROID_HOME=$HOME/Library/Android/sdk
