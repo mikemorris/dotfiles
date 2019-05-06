@@ -87,6 +87,9 @@ let g:javascript_plugin_jsdoc = 1
 " Fastlane syntax highlighting
 au BufNewFile,BufRead Fastfile,Appfile,Snapfile,Scanfile,Gymfile,Matchfile,Deliverfile set filetype=ruby
 
+" TypeScript .tsx support
+au BufNewFile,BufRead *.tsx set filetype=typescript
+
 " Lint
 let g:ale_fixers = {
 \ 'javascript': ['prettier'],
@@ -111,6 +114,7 @@ nnoremap <leader>an :ALENextWrap<cr>
 nnoremap <leader>ap :ALEPreviousWrap<cr>
 
 " Autocomplete
+let g:ale_completion_enabled = 1
 let g:deoplete#enable_at_startup = 1
 
 " Search
