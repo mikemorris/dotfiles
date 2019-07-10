@@ -2,21 +2,33 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+" Plug 'ajmwagar/vim-deus'
+" Plug 'drewtempelmeyer/palenight.vim'
 
 " Syntax
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' " TypeScript
-Plug 'elixir-editors/vim-elixir'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " Lint
 Plug 'w0rp/ale'
-Plug 'slashmili/alchemist.vim' " Elixir
+" Plug 'slashmili/alchemist.vim' " Elixir
 " Plug 'neomake/neomake'
 
 " Autocomplete
 Plug 'tpope/vim-surround'
+
+" Status Line
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='base16'
+
+" Integrate ALE with vim-airline
+let g:airline#extensions#ale#enabled = 1
 
 if has('nvim')
   " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -75,11 +87,15 @@ set number " Show line numbers
 " Colorschemes
 set t_Co=256
 set background=dark
+let base16colorspace=256
+set termguicolors
+" let g:deus_termcolors=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
-colorscheme solarized
+colorscheme base16-tomorrow-night
+
+" Set transparent background
+" hi Normal guibg=NONE ctermbg=NONE
 
 " Syntax
 let g:javascript_plugin_jsdoc = 1
@@ -95,23 +111,20 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
-\ 'Markdown': ['prettier'],
+\ 'markdown': ['prettier'],
+\ 'rust': ['rustfmt'],
+\ 'tf': ['terraform'],
 \}
 let g:ale_linters = {
 \ 'javascript': ['flow'],
 \}
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
+" highlight clear ALEErrorSign
+" highlight clear ALEWarningSign
 let g:ale_fix_on_save = 1
-let g:ale_sign_error = 'X'
-let g:ale_sign_warning = '?'
-let g:ale_statusline_format = ['X %d', '? %d', '']
-" %linter% is the name of the linter that provided the message
-" %s is the error or warning message
-let g:ale_echo_msg_format = '%linter% says %s'
+
 " Map keys to navigate between lines with errors and warnings.
-nnoremap <leader>an :ALENextWrap<cr>
-nnoremap <leader>ap :ALEPreviousWrap<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Autocomplete
 let g:ale_completion_enabled = 1
