@@ -1,3 +1,10 @@
+" Automatically install vim-plug if not present
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Colorschemes
@@ -13,6 +20,7 @@ Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' " TypeScript
 " Plug 'elixir-editors/vim-elixir'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'hashivim/vim-hashicorp-tools'
 
 " Lint
 Plug 'w0rp/ale'
