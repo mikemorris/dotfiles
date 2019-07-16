@@ -126,7 +126,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
 \ 'javascript': ['flow'],
-\ 'go': ['golangci_lint'],
+\ 'go': ['gopls', 'golangci_lint'],
 \}
 " highlight clear ALEErrorSign
 " highlight clear ALEWarningSign
