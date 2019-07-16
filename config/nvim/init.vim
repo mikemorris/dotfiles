@@ -122,9 +122,11 @@ let g:ale_fixers = {
 \ 'markdown': ['prettier'],
 \ 'rust': ['rustfmt'],
 \ 'tf': ['terraform'],
+\ 'go': ['gofmt'],
 \}
 let g:ale_linters = {
 \ 'javascript': ['flow'],
+\ 'go': ['golangci_lint'],
 \}
 " highlight clear ALEErrorSign
 " highlight clear ALEWarningSign
