@@ -122,6 +122,7 @@ let g:ale_fixers = {
 \ 'markdown': ['prettier'],
 \ 'rust': ['rustfmt'],
 \ 'tf': ['terraform'],
+\ 'hcl': ['terraform'],
 \ 'go': ['gofmt'],
 \}
 let g:ale_linters = {
