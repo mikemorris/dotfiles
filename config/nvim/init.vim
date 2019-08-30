@@ -31,6 +31,7 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-surround'
 
 if has('nvim')
+  " Requires Python3 and `pip3 install neovim`
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
@@ -137,6 +138,12 @@ let g:ale_linters = {
 " highlight clear ALEErrorSign
 " highlight clear ALEWarningSign
 let g:ale_fix_on_save = 1
+
+" Use ALE as completion sources for all code.
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
+
 
 " Map keys to navigate between lines with errors and warnings.
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
