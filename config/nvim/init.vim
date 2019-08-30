@@ -30,6 +30,20 @@ Plug 'w0rp/ale'
 " Autocomplete
 Plug 'tpope/vim-surround'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+" This setting must be set before ALE is loaded.
+" You should not turn this setting on if you wish to use ALE as a completion
+" source for other completion plugins, like Deoplete.
+" let g:ale_completion_enabled = 1
+
 " Status Line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -37,15 +51,6 @@ let g:airline_theme='base16'
 
 " Integrate ALE with vim-airline
 let g:airline#extensions#ale#enabled = 1
-
-if has('nvim')
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  " Plug 'Shougo/deoplete.nvim'
-  " Plug 'roxma/nvim-yarp'
-  " Plug 'roxma/vim-hug-neovim-rpc'
-endif
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm i -g tern' } " JavaScript
 
 " Edit
 Plug 'vim-scripts/sudo.vim'
@@ -137,19 +142,15 @@ let g:ale_fix_on_save = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Autocomplete
-let g:ale_completion_enabled = 1
-let g:deoplete#enable_at_startup = 1
-
 " Search
 set incsearch " Incremental search (as you type)
 set smartcase " Ignore case when searching lowercase
 
 nnoremap <leader>a :Ack 
 
-" Add ag support to ack.vim
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+" Add ripgrep support to ack.vim
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --no-heading --smart-case'
 endif
 
 let g:ctrlp_map = '<leader>p'
