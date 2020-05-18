@@ -13,6 +13,7 @@ brew "jq"
 brew "kubernetes-cli"
 brew "kubernetes-helm"
 brew "llvm"
+brew "mas"
 brew "neovim"
 brew "node"
 brew "pkgconfig"
@@ -26,3 +27,7 @@ brew "terraform"
 brew "tmux"
 brew "tree"
 brew "watchman"
+
+cask "docker"
+
+mas "Xcode", id: 497799835
