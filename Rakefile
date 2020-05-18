@@ -1,7 +1,7 @@
 # from http://github.com/ryanb/dotfiles/tree/master
 #
 # Copyright (c) 2008 Ryan Bates
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining
 # a copy of this software and associated documentation files (the
 # "Software"), to deal in the Software without restriction, including
@@ -9,10 +9,10 @@
 # distribute, sublicense, and/or sell copies of the Software, and to
 # permit persons to whom the Software is furnished to do so, subject to
 # the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be
 # included in all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 # EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 # MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -28,9 +28,11 @@ task :default => :install
 
 desc "install the dot files into user's home directory"
 task :install do
+  system %Q{brew tap "homebrew/bundle" && brew bundle}
+
   replace_all = true
   Dir['*'].each do |file|
-    next if file.match(/Rakefile|README|LICENSE/)
+    next if file.match(/Brewfile|Rakefile|README|LICENSE/)
     next if FileTest.symlink?(File.join(ENV['HOME'], ".#{file}"))
 
     # handle .local versions; only copy if DNE
@@ -40,7 +42,7 @@ task :install do
         end
         next
     end
-    
+
     # handle normal dotfiles
     if File.exist?(File.join(ENV['HOME'], ".#{file}"))
       if replace_all
