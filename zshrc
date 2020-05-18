@@ -48,6 +48,10 @@ compinit
 # Load the kubectl completion code for zsh[1] into the current shell
 source <(kubectl completion zsh)
 
+# Load fzf keyy bindings and fuzzy completion
+# https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # bash prompt config
 function parse_git_branch {
    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
