@@ -1,11 +1,10 @@
-tap "github/gh"
 tap "golangci/tap"
 tap "homebrew/cask"
 
 brew "docker-machine-driver-hyperkit"
 brew "fzf"
 brew "git"
-brew "github/gh/gh"
+brew "gh"
 brew "go"
 brew "golangci/tap/golangci-lint"
 brew "icu4c"
