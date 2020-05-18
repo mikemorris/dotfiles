@@ -32,5 +32,7 @@ brew "watchman"
 brew "wget"
 
 cask "docker"
+cask "imageoptim"
+cask "macdown"
 
 mas "Xcode", id: 497799835
