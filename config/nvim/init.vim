@@ -9,36 +9,23 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
-" Plug 'ajmwagar/vim-deus'
-" Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ajmwagar/vim-deus'
 
 " Syntax
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'HerringtonDarkholme/yats.vim' " TypeScript
-" Plug 'elixir-editors/vim-elixir'
 " Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'hashivim/vim-hashicorp-tools'
+" Plug 'elixir-editors/vim-elixir'
 
 " Lint
 Plug 'w0rp/ale'
 " Plug 'slashmili/alchemist.vim' " Elixir
-" Plug 'neomake/neomake'
 
 " Autocomplete
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
-
-if has('nvim')
-  " Requires Python3 and `pip3 install neovim`
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
 " This setting must be set before ALE is loaded.
 " You should not turn this setting on if you wish to use ALE as a completion
@@ -48,10 +35,6 @@ let g:deoplete#enable_at_startup = 1
 " Status Line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-let g:airline_theme='base16'
-
-" Integrate ALE with vim-airline
-let g:airline#extensions#ale#enabled = 1
 
 " Edit
 Plug 'vim-scripts/sudo.vim'
@@ -59,17 +42,18 @@ Plug 'tpope/vim-commentary'
 " Plug 'editorconfig/editorconfig-vim'
 
 " Search
-Plug 'mileszs/ack.vim' " Search in files
-Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Test
 " Plug 'janko-m/vim-test'
+" Plug 'sebdah/vim-delve' " Debug Go applications using Delve
 
 " git
-" Plug 'tpope/fugitive.vim'
+Plug 'tpope/vim-fugitive'
 
 " tmux
-" Plug 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -98,30 +82,37 @@ set tabstop=4 softtabstop=2 shiftwidth=2 expandtab smarttab ai si
 set wrap linebreak " Wrap lines at word
 set number " Show line numbers
 
+" Window management
+set splitbelow splitright
+
 " Colorschemes
 set t_Co=256
 set background=dark
-let base16colorspace=256
-set termguicolors
-" let g:deus_termcolors=256
+" set termguicolors " Leave disabled for Terminal.app
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme base16-tomorrow-night
+colorscheme deus
 
 " Set transparent background
 " hi Normal guibg=NONE ctermbg=NONE
 
 " Syntax
-let g:javascript_plugin_jsdoc = 1
-
 " Fastlane syntax highlighting
 au BufNewFile,BufRead Fastfile,Appfile,Snapfile,Scanfile,Gymfile,Matchfile,Deliverfile set filetype=ruby
 
 " TypeScript .tsx support
 au BufNewFile,BufRead *.tsx set filetype=typescript
 
+" jsonc comment highlighting
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 " Lint
+let g:ale_linters = {
+\ 'go': ['gopls', 'golangci_lint'],
+\}
+
 let g:ale_fixers = {
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ 'javascript': ['prettier'],
 \ 'json': ['prettier'],
 \ 'css': ['prettier'],
@@ -131,39 +122,25 @@ let g:ale_fixers = {
 \ 'hcl': ['terraform'],
 \ 'go': ['gofmt'],
 \}
-let g:ale_linters = {
-\ 'javascript': ['flow'],
-\ 'go': ['gopls', 'golangci_lint'],
-\}
-" highlight clear ALEErrorSign
-" highlight clear ALEWarningSign
+
 let g:ale_fix_on_save = 1
-
-" Use ALE as completion sources for all code.
-call deoplete#custom#option('sources', {
-\ '_': ['ale'],
-\})
-
 
 " Map keys to navigate between lines with errors and warnings.
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" Autocomplete
+" Enable automatic imports from external TypeScript modules
+let g:ale_completion_tsserver_autoimport = 1
+
+" Status Line
+let g:airline_theme='deus'
+
+" Integrate ALE with vim-airline
+let g:airline#extensions#ale#enabled = 1
+
 " Search
 set incsearch " Incremental search (as you type)
 set smartcase " Ignore case when searching lowercase
 
-nnoremap <leader>a :Ack 
-
-" Add ripgrep support to ack.vim
-if executable('rg')
-  let g:ackprg = 'rg --vimgrep --no-heading --smart-case'
-endif
-
-let g:ctrlp_map = '<leader>p'
-
-" Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" Window management
-set splitbelow splitright
+nmap <leader>p :Files<CR>
