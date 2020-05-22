@@ -36,6 +36,7 @@ fi
 
 # Add SSH Keys
 ssh-add -A &> /dev/null
+# TODO: use https://github.com/FiloSottile/yubikey-agent
 
 alias t="tmux -2 at -t"
 alias gti="git"
