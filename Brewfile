@@ -1,5 +1,6 @@
 tap "homebrew/cask"
 
+brew "fish"
 brew "fzf"
 brew "git"
 brew "gh"
