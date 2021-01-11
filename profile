@@ -1,8 +1,14 @@
 # Set PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
+# Use Homebrew executables
+export PATH="/usr/local/sbin:$PATH"
+
 # Use Homebrew Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Use Homebrew Python
+export PATH="/usr/local/opt/python/bin:$PATH"
 
 # Use global Node.js modules
 export PATH="/usr/local/lib/node_modules:$PATH"
