@@ -1,6 +1,9 @@
 # Set PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
+# Use Homebrew Python 3
+export PATH="/usr/local/opt/python3/libexec/bin:$PATH"
+
 # Use global Node.js modules
 export PATH="/usr/local/lib/node_modules:$PATH"
 
