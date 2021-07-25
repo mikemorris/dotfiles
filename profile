@@ -17,7 +17,7 @@ export PATH="/usr/local/lib/node_modules:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 # Use Rust Cargo crates
-export PATH="$HOME/.cargo/bin:$PATH"
+. "$HOME/.cargo/env"
 
 # Use Homebrew LLVM and clang for native WASM compilation
 export PATH="/usr/local/opt/llvm/bin:$PATH"
