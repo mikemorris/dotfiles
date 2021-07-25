@@ -5,7 +5,17 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" call plug#begin('~/.vim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
+
+" Collection of common configurations for the Nvim LSP client
+Plug 'neovim/nvim-lspconfig'
+
+" Extensions to built-in LSP, for example, providing type inlay hints
+Plug 'nvim-lua/lsp_extensions.nvim'
+
+" Autocompletion framework for built-in LSP
+Plug 'nvim-lua/completion-nvim'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
@@ -108,6 +118,7 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Lint
 let g:ale_linters = {
+\ 'rust': ['analyzer', 'cargo'],
 \ 'go': ['gopls', 'golangci_lint'],
 \}
 
@@ -123,6 +134,7 @@ let g:ale_fixers = {
 \ 'go': ['gofmt'],
 \}
 
+let g:ale_rust_cargo_use_clippy = 1
 let g:ale_fix_on_save = 1
 
 " Autocomplete
