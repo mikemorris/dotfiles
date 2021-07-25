@@ -1,14 +1,20 @@
 # Set PKG_CONFIG_PATH
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 
+# Use Homebrew Ruby
+set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+
 # Use Homebrew Python 3
-export PATH="/usr/local/opt/python3/libexec/bin:$PATH"
+set -g fish_user_paths "/usr/local/opt/python3/libexec/bin" $fish_user_paths
 
 # Use global Node.js modules
-export PATH="/usr/local/lib/node_modules:$PATH"
+set -g fish_user_paths "/usr/local/lib/node_modules" $fish_user_paths
 
 # Use Rust Cargo crates
-export PATH="$HOME/.cargo/bin:$PATH"
+set -g fish_user_paths "$HOME/.cargo/bin" $fish_user_paths
+
+# Use Homebrew sbin executables
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Preferred editor for local and remote sessions
 if test -n $SSH_CONNECTION
