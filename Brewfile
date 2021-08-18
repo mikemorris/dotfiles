@@ -21,6 +21,7 @@ brew "socat"
 brew "tcpdump"
 brew "tmux"
 brew "tree"
+brew "wabt"
 brew "wget"
 
 cask "imageoptim"
