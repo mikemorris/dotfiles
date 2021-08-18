@@ -61,6 +61,9 @@ Plug 'junegunn/fzf.vim'
 " Plug 'janko-m/vim-test'
 " Plug 'sebdah/vim-delve' " Debug Go applications using Delve
 
+" Debug
+" Plug 'mfussenegger/nvim-dap'
+
 " git
 Plug 'tpope/vim-fugitive'
 
