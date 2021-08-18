@@ -10,6 +10,9 @@ set -g fish_user_paths "/usr/local/opt/python3/libexec/bin" $fish_user_paths
 # Use global Node.js modules
 set -g fish_user_paths "/usr/local/lib/node_modules" $fish_user_paths
 
+# Use Go binaries
+set -g fish_user_paths "$HOME/go/bin" $fish_user_paths
+
 # Use Rust Cargo crates
 set -g fish_user_paths "$HOME/.cargo/bin" $fish_user_paths
 
