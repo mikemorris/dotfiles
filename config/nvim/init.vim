@@ -17,6 +17,12 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 " Autocompletion framework for built-in LSP
 Plug 'nvim-lua/completion-nvim'
 
+" Autocomplete
+Plug 'tpope/vim-surround'
+" https://github.com/Raimondi/delimitMate
+" https://github.com/cohama/lexima.vim
+" https://github.com/windwp/nvim-autopairs
+
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'ajmwagar/vim-deus'
@@ -32,9 +38,6 @@ Plug 'HerringtonDarkholme/yats.vim' " TypeScript
 " Lint
 Plug 'w0rp/ale'
 " Plug 'slashmili/alchemist.vim' " Elixir
-
-" Autocomplete
-Plug 'tpope/vim-surround'
 
 " This setting must be set before ALE is loaded.
 " You should not turn this setting on if you wish to use ALE as a completion
