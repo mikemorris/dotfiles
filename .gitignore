@@ -2,3 +2,4 @@ Brewfile.lock.json
 config/*
 !config/nvim
 config/nvim/.netrwhist
+Brewfile.lock.json
