@@ -32,3 +32,5 @@ ssh-add -A &> /dev/null
 
 alias t="tmux -2 at -t"
 alias gti="git"
+
+starship init fish | source
