@@ -2,6 +2,7 @@ tap "github/gh"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-versions"
 
 brew "exiftool"
 brew "fastmod"
