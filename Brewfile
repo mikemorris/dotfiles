@@ -48,6 +48,7 @@ cask "fantastical"
 cask "fig"
 cask "firefox"
 cask "macdown"
+cask "obsidian"
 cask "slack"
 cask "zoom"
 
