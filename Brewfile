@@ -43,6 +43,7 @@ brew "wget"
 
 cask "1password"
 cask "discord"
+cask "disk-inventory-x"
 cask "docker"
 cask "fantastical"
 cask "fig"
