@@ -46,6 +46,7 @@ ssh-add -A &> /dev/null
 
 alias t="tmux -2 at -t"
 alias gti="git"
+alias k="kubectl"
 
 # Load fzf keyy bindings and fuzzy completion
 # https://github.com/junegunn/fzf#using-homebrew-or-linuxbrew
