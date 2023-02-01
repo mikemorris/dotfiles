@@ -9,6 +9,7 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 # Use Homebrew Python
 export PATH="/usr/local/opt/python/bin:$PATH"
+export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
 
 # Use global Node.js modules
 export PATH="/usr/local/lib/node_modules:$PATH"
@@ -24,6 +25,8 @@ export PATH="/usr/local/opt/llvm/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/llvm/lib -Wl,-rpath,/usr/local/opt/llvm/lib"
 export LDFLAGS="-L/usr/local/opt/llvm/lib"
 export CPPFLAGS="-I/usr/local/opt/llvm/include"
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # Use Homebrew curl to work around SIP for Proxychains
 # https://github.com/rofl0r/proxychains-ng/issues/78
