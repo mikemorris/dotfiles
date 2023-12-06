@@ -1,11 +1,5 @@
-.agignore
 .DS_Store
 *.orig
 *.swp
 *.swo
 *.swn
-node_modules
-npm-debug.log
-*.xcscmblueprint
-proxychains.conf
-.tool-versions
