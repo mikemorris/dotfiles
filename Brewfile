@@ -1,8 +1,6 @@
 # https://github.com/ibraheemdev/modern-unix
 
 tap "homebrew/bundle"
-tap "homebrew/cask"
-# tap "homebrew/cask-versions"
 
 brew "bat"
 brew "bottom"
