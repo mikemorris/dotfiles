@@ -19,6 +19,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 # Use Go binaries
 export PATH="$HOME/go/bin:$PATH"
 
+# Set default editor for git and other utils
 export EDITOR='nvim'
 
 alias t="tmux at -t"
@@ -27,6 +28,8 @@ alias k="kubectl"
 alias rg="rg -S -C 2"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias cat="bat -A"
+
+export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 
 # Load fzf keyy bindings and fuzzy completion
 # https://github.com/junegunn/fzf#using-homebrew
