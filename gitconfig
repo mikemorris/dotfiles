@@ -18,29 +18,32 @@
 [interactive]
   diffFilter = delta --color-only
 
-[delta]
-    ; diff colors selected from everforest palette
-    ; https://github.com/sainnhe/everforest
-    syntax-theme = ansi
-
-    minus-style = bold syntax "#4c3743"
-    minus-non-emph-style = normal "#4c3743"
-    minus-emph-style = bold syntax "#e66868"
-    line-numbers-minus-style = bold "#e66868"
-
-    plus-style = bold syntax "#3c4841"
-    plus-non-emph-style = normal "#3c4841"
-    plus-emph-style = bold syntax "#859900"
-    line-numbers-plus-style = bold "#859900"
-
-    zero-style = dim syntax
-
-    navigate = true
-    side-by-side = true
-    true-color = always
-
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 
 [diff]
   colorMoved = default
+  colorMovedWS = ignore-space-change
+
+[delta]
+  ; diff colors selected from everforest palette
+  ; https://github.com/sainnhe/everforest
+  syntax-theme = ansi
+
+  minus-style = syntax "#4c3743"
+  minus-emph-style = bold syntax "#6c4f5f"
+  line-numbers-minus-style = bold "#e67e80"
+
+  plus-style = syntax "#3c4841"
+  plus-emph-style = bold syntax "#58685e"
+  line-numbers-plus-style = bold "#83c092"
+
+  ; configure diff colors for moved code blocks
+  map-styles = \
+      bold purple => bold "#dbbc7f" "#45443c", \
+      bold cyan => bold "#7fbbb3" "#384b55"
+
+  zero-style = dim syntax
+
+  side-by-side = true
+  true-color = always
