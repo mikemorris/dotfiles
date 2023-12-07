@@ -2,7 +2,7 @@
   email = 1149913+mikemorris@users.noreply.github.com
 
 [core]
-  editor = /usr/local/bin/nvim
+  editor = /opt/homebrew/bin/nvim
   excludesfile = $HOME/.gitignore
   pager = delta
 
