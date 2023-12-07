@@ -3,6 +3,7 @@
 tap "homebrew/bundle"
 
 brew "bat"
+brew "bat-extras"
 brew "bottom"
 brew "dog"
 brew "duf"

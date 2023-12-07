@@ -24,6 +24,9 @@ export EDITOR='nvim'
 alias t="tmux at -t"
 alias gti="git"
 alias k="kubectl"
+alias rg="rg -S -C 2"
+alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
+alias cat="bat -A"
 
 # Load fzf keyy bindings and fuzzy completion
 # https://github.com/junegunn/fzf#using-homebrew
