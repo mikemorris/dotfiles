@@ -1,9 +1,12 @@
-# No Kill No Beep Beep
-unsetopt beep
+# Set vim mode for shell line editor
+bindkey -v
 
 # Enable zsh completions
 autoload -Uz compinit
 compinit
+
+# No Kill No Beep Beep
+unsetopt beep
 
 # Use Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -18,7 +21,7 @@ export PATH="$HOME/go/bin:$PATH"
 
 export EDITOR='nvim'
 
-alias t="tmux -2 at -t"
+alias t="tmux at -t"
 alias gti="git"
 alias k="kubectl"
 
