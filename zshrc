@@ -29,6 +29,8 @@ alias rg="rg -S -C 2"
 alias fzf="fzf --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 alias cat="bat -A"
 alias gdu="gdu-go"
+alias ls="ls --color=auto"
+alias ssh="TERM=xterm-256color ssh"
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
