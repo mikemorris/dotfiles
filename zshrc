@@ -39,7 +39,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # https://github.com/junegunn/fzf#using-homebrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # Load the kubectl completion code for zsh[1] into the current shell
 # source <(kubectl completion zsh)
