@@ -1,6 +1,1 @@
 Brewfile.lock.json
-config/*
-!config/alacritty
-!config/bat
-!config/nvim
-config/nvim/.netrwhist
